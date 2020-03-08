@@ -1,0 +1,12 @@
+all: target
+target: bisection.o quick.o stack.o
+	gcc -o exe bisection.o quick.o stack.o
+	./exe 10000
+	rm -rf *o exe
+	
+main.o: bisection.c
+	gcc -c bisection.c
+quick.o: quick.c
+	gcc -c quick.c
+stack.o: stack.c
+	gcc -c stack.c
